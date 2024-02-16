@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:16:50 by stak              #+#    #+#             */
-/*   Updated: 2024/02/12 14:00:46 by stak             ###   ########.fr       */
+/*   Updated: 2024/02/16 16:56:05 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ long int	ft_atoi(const char *str)
 	}
 	return (i);
 }
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
@@ -87,9 +88,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-int ft_checker(char *argv)
+
+int	ft_checker(char *argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (argv[i])
@@ -100,6 +102,7 @@ int ft_checker(char *argv)
 	}
 	return (1);
 }
+
 int ft_dup_check(char **argv, int i)
 {
 	int j;
