@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:45 by stak              #+#    #+#             */
-/*   Updated: 2024/02/12 17:44:54 by stak             ###   ########.fr       */
+/*   Updated: 2024/02/16 16:48:26 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,37 @@ static char	**ft_strwordcount(char const *s, char c, char **string);
 char		**ft_split(char const *s, char c);
 size_t		ft_strlen(const char *s);
 int			ft_isdigit(char n);
-int	ft_sign(char n);
-int ft_checker(char *argv);
+int			ft_sign(char n);
+int			ft_checker(char *argv);
 static int	check_overflow(long int i, long int check, long int sign);
 long int	ft_atoi(const char *str);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-int ft_dup_check(char **argv, int i);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-static void	swap(t_list **head);
-int	ft_lstsize(t_list *lst);
-void	ss(t_list **a, t_list **b, bool checker);
-void	sb(t_list **b, bool checker);
-void	sa(t_list	**a, bool checker);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_dup_check(char **argv, int i);
+
+void		ft_lstadd_back(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+t_list		*ft_lstlast(t_list *lst);
+
+//swap
+void		swap_sa(t_list **a);
+void		swap_sb(t_list **b);
+void		swap_ss(t_list **a, t_list **b);
+
+//rotate
+void		rotate_ra(t_list **a);
+void		rotate_rb(t_list **b);
+void		rotate_rr(t_list **a, t_list **b);
+
+//push
+void		push_pa(t_list **a, t_list **b);
+void		push_pb(t_list **a, t_list **b);
+
+//reverse
+void		reverse_rotate_rra(t_list **a);
+void		reverse_rotate_rrb(t_list **b);
+void		reverse_rotate_rrr(t_list **a, t_list **b);;
+
+
+
 #endif

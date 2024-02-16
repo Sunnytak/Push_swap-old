@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:27:32 by stak              #+#    #+#             */
-/*   Updated: 2024/02/09 14:31:04 by stak             ###   ########.fr       */
+/*   Updated: 2024/02/16 16:56:52 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[len] = '\0';
 	return (str);
 }
+
 char	*ft_strdup(const char *s1)
 {
 	int		len;
@@ -56,6 +57,7 @@ char	*ft_strdup(const char *s1)
 	}
 	return (ptr);
 }
+
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
@@ -76,6 +78,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
