@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:45 by stak              #+#    #+#             */
-/*   Updated: 2024/02/16 16:48:26 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/21 11:23:48 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ typedef struct s_list
 	int				lst;
 	int				new;
 	long int		content;
-	int				push_cost;
-	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -47,6 +45,7 @@ long int	ft_atoi(const char *str);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_dup_check(char **argv, int i);
 
+//list
 void		ft_lstadd_back(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 void		ft_lstadd_front(t_list **lst, t_list *new);
@@ -69,8 +68,15 @@ void		push_pb(t_list **a, t_list **b);
 //reverse
 void		reverse_rotate_rra(t_list **a);
 void		reverse_rotate_rrb(t_list **b);
-void		reverse_rotate_rrr(t_list **a, t_list **b);;
+void		reverse_rotate_rrr(t_list **a, t_list **b);
 
+//sort_helper
+t_list		*highest(t_list **stack);
+t_list		*lowest(t_list **stack);
+t_list		*find_last(t_list *stack);
 
+//sort
+
+void		sort_3(t_list	**stack);
 
 #endif

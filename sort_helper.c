@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:42:51 by stak              #+#    #+#             */
-/*   Updated: 2024/02/16 15:51:27 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/21 11:42:31 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*highest(t_list **stack)
 	t_list	*current;
 	t_list	*highest;
 
-	current = stack;
+	current = *stack;
 	highest = current->next;
 	if (*stack == NULL || (*stack)->next == NULL)
 		return (0);
@@ -46,6 +46,15 @@ t_list	*lowest(t_list **stack)
 		current = current->next;
 	}
 	return (lowest);
+}
+
+t_list	*find_last(t_list *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 // int main() {

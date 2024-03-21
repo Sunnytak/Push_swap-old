@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:16:50 by stak              #+#    #+#             */
-/*   Updated: 2024/02/16 16:56:05 by stak             ###   ########.fr       */
+/*   Updated: 2024/02/16 17:10:18 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	ft_checker(char *argv)
 
 int ft_dup_check(char **argv, int i)
 {
-	int j;
+	int	j;
 
 	j = 1;
 	while (argv[i])

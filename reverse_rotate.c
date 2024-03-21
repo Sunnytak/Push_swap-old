@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 13:11:23 by stak              #+#    #+#             */
-/*   Updated: 2024/02/16 16:54:51 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/11 11:41:43 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,65 +76,65 @@ void	reverse_rotate_rrr(t_list **a, t_list **b)
 }
 
 
-int    main(void)
-{
-	int i;
-	int j;
-	i = 0;
-	j = 5;
+// int    main(void)
+// {
+// 	int i;
+// 	int j;
+// 	i = 0;
+// 	j = 5;
 
-	t_list *root_a = NULL;
-	t_list *root_b = NULL;
+// 	t_list *root_a = NULL;
+// 	t_list *root_b = NULL;
 
-	while (i < 5)
-	{
-		t_list *stack_a = malloc(sizeof(t_list));
-		if (!stack_a)
-			return (0);
-		stack_a->content = i;
-		stack_a->next = NULL;
-		ft_lstadd_back(&root_a, stack_a);
-		i++;
-	}
-	while (j < 10)
-	{
-		t_list *stack_b = malloc(sizeof(t_list));
-		if (!stack_b)
-			return (0);
-		stack_b->content = j;
-		stack_b->next = NULL;
-		ft_lstadd_back(&root_b, stack_b);
-		j++;
-	}
-	printf("%s\n", "before rotate a:");
-	t_list *current_a = root_a;
-	while (current_a != NULL)
-	{
-		printf("%ld\n", current_a->content);
-		current_a = current_a->next;
-	}
-	printf("%s\n", "before rotate b:");
-	t_list *current_b = root_b;
-	while (current_b != NULL)
-	{
-		printf("%ld\n", current_b->content);
-		current_b = current_b->next;
-	}
-	printf("%s\n", "after rotate_ra a:");
-	reverse_rotate_rrr(&root_a, &root_b);
-	t_list *current_a2 = root_a;
-	while (current_a2 != NULL)
-	{
-		printf("%ld\n", current_a2->content);
-		current_a2 = current_a2->next;
-	}
-	printf("%s\n", "after rotate_rb b:");
-	// reverse_rotate_rrb(&root_b);
-	t_list *current_b2 = root_b;
-	while (current_b2 != NULL)
-	{
-		printf("%ld\n", current_b2->content);
-		current_b2 = current_b2->next;
-	}
-	return (0);
-}
+// 	while (i < 5)
+// 	{
+// 		t_list *stack_a = malloc(sizeof(t_list));
+// 		if (!stack_a)
+// 			return (0);
+// 		stack_a->content = i;
+// 		stack_a->next = NULL;
+// 		ft_lstadd_back(&root_a, stack_a);
+// 		i++;
+// 	}
+// 	while (j < 10)
+// 	{
+// 		t_list *stack_b = malloc(sizeof(t_list));
+// 		if (!stack_b)
+// 			return (0);
+// 		stack_b->content = j;
+// 		stack_b->next = NULL;
+// 		ft_lstadd_back(&root_b, stack_b);
+// 		j++;
+// 	}
+// 	printf("%s\n", "before rotate a:");
+// 	t_list *current_a = root_a;
+// 	while (current_a != NULL)
+// 	{
+// 		printf("%ld\n", current_a->content);
+// 		current_a = current_a->next;
+// 	}
+// 	printf("%s\n", "before rotate b:");
+// 	t_list *current_b = root_b;
+// 	while (current_b != NULL)
+// 	{
+// 		printf("%ld\n", current_b->content);
+// 		current_b = current_b->next;
+// 	}
+// 	printf("%s\n", "after rotate_ra a:");
+// 	reverse_rotate_rrr(&root_a, &root_b);
+// 	t_list *current_a2 = root_a;
+// 	while (current_a2 != NULL)
+// 	{
+// 		printf("%ld\n", current_a2->content);
+// 		current_a2 = current_a2->next;
+// 	}
+// 	printf("%s\n", "after rotate_rb b:");
+// 	// reverse_rotate_rrb(&root_b);
+// 	t_list *current_b2 = root_b;
+// 	while (current_b2 != NULL)
+// 	{
+// 		printf("%ld\n", current_b2->content);
+// 		current_b2 = current_b2->next;
+// 	}
+// 	return (0);
+// }

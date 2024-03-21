@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:58:45 by stak              #+#    #+#             */
-/*   Updated: 2024/02/16 16:34:09 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/14 15:01:21 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	main(int argc, char **argv)
 
 	i = 1;
 	head = NULL;
-	if (1 == argc)
-		printf("%s\n", argv[0]);
-	else if (2 == argc)
+	if (1 == argc || (argc == 2 && !argv[1][0]))
+		return (1);
+	else if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
 		i--;
@@ -63,6 +63,57 @@ int	main(int argc, char **argv)
 	// }
 	return (0);
 }
+// int	main(int argc, char **argv)
+// {
+// 	int		i;
+// 	t_list	*head;
+// 	t_list	*stack_a;
+
+// 	i = 1;
+// 	head = NULL;
+// 	if (1 == argc || (argc == 2 && !argv[1][0]))
+// 		return (1);
+// 	else if (argc == 2)
+// 	{
+// 		argv = ft_split(argv[1], ' ');
+// 		i--;
+// 	}
+// 	while (argv[i])
+// 	{
+// 		if (ft_atoi(argv[i]) != 0 && !ft_dup_check(argv, i))
+// 		{
+// 			stack_a = malloc(sizeof(t_list));
+// 			stack_a->content = ft_atoi(argv[i]);
+// 			stack_a->next = head;
+// 			head = stack_a;
+// 			printf("Inserted: %ld\n", stack_a->content);
+// 		}
+// 		else
+// 		{
+// 			printf("Error");
+// 			return (1);
+// 		}
+// 		i++;
+// 	}
+// 	// Swap nodes
+// 	sa(&head, false);
+
+// 	// Print the list after swapping
+// 	printf("List content after swapping:\n");
+// 	t_list *current = head;
+// 	while (current != NULL)
+// 	{
+// 		printf("%ld\n", current->content);
+// 		current = current->next;
+// 	}
+// 	// t_list *current = head;
+// 	// while(current != NULL)
+// 	// {
+// 	// 	printf("after%ld\n", current->content);
+// 	// 	current = current->next;
+// 	// }
+// 	return (0);
+// }
 
 // static void swap(t_list **head)
 // {
