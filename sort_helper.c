@@ -6,11 +6,26 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:42:51 by stak              #+#    #+#             */
-/*   Updated: 2024/03/21 11:42:31 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/25 11:49:38 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	stack_len(t_list *stack)
+{
+	int	count;
+
+	if (!stack)
+		return (0);
+	count = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		count++;
+	}
+	return (count);
+}
 
 t_list	*highest(t_list **stack)
 {
@@ -56,7 +71,17 @@ t_list	*find_last(t_list *stack)
 		stack = stack->next;
 	return (stack);
 }
-
+bool	stack_sorted(t_list *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->content > stack->next->content)
+			return (false);
+		stack = stack->next;
+	return (true);
+}
 // int main() {
 //     // Create a linked list for testing
 //     t_list *node1 = malloc(sizeof(t_list));

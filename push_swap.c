@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:58:45 by stak              #+#    #+#             */
-/*   Updated: 2024/03/14 15:01:21 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/25 16:59:47 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int argc, char **argv)
 {
 	int		i;
+	long	n;
 	t_list	*head;
 	t_list	*stack_a;
 
@@ -29,6 +30,9 @@ int	main(int argc, char **argv)
 	}
 	while (argv[i])
 	{
+		n = ft_atoi(argv[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			printf("");
 		if (ft_atoi(argv[i]) != 0 && !ft_dup_check(argv, i))
 		{
 			stack_a = malloc(sizeof(t_list));
@@ -45,7 +49,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	// Swap nodes
-	sa(&head, false);
+	swap_sa(&head);
 
 	// Print the list after swapping
 	printf("List content after swapping:\n");

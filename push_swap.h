@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:45 by stak              #+#    #+#             */
-/*   Updated: 2024/03/21 11:23:48 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/25 12:16:44 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ typedef struct s_list
 	int				lst;
 	int				new;
 	long int		content;
+	struct s_list	*target_node;
 	struct s_list	*next;
 	struct s_list	*prev;
+	bool			above_median;
+	bool			cheapest;
 }					t_list;
 
 static int	ft_countstr(char const *s, char c);

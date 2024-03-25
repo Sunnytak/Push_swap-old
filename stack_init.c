@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:08:55 by stak              #+#    #+#             */
-/*   Updated: 2024/03/21 14:23:54 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/25 16:58:02 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	void	append_node(t_list **stack, int n)
 	if (!node)
 		return ;
 	node->next = NULL;
-	node->content = n;
+	node->lst = n;
 	if (!(*stack))
 	{
 		*stack = node;
@@ -47,7 +47,7 @@ void	init_stack_a(t_list **a, char **argv)
 	{
 		if (error_syntax(argv[i]))
 			free_error (a);
-		n = ft_ atoi(argv[i]);
+		n = ft_atoi(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
 		if (erro_duplicate(*a, (int)n))
@@ -56,3 +56,17 @@ void	init_stack_a(t_list **a, char **argv)
 		i++;
 	}
 }
+
+t_list	*get_cheapest(t_list *stack)
+{
+	if (!stack)
+		retrun (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
