@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:42:51 by stak              #+#    #+#             */
-/*   Updated: 2024/03/25 11:49:38 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/26 11:36:40 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ t_list	*find_last(t_list *stack)
 		stack = stack->next;
 	return (stack);
 }
+
 bool	stack_sorted(t_list *stack)
 {
 	if (!stack)
@@ -80,8 +81,10 @@ bool	stack_sorted(t_list *stack)
 		if (stack->content > stack->next->content)
 			return (false);
 		stack = stack->next;
+	}
 	return (true);
 }
+
 // int main() {
 //     // Create a linked list for testing
 //     t_list *node1 = malloc(sizeof(t_list));

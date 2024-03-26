@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:45 by stak              #+#    #+#             */
-/*   Updated: 2024/03/25 12:16:44 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/26 14:29:49 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
+# include "../../New/ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
@@ -60,18 +60,18 @@ void		swap_sb(t_list **b);
 void		swap_ss(t_list **a, t_list **b);
 
 //rotate
-void		rotate_ra(t_list **a);
-void		rotate_rb(t_list **b);
-void		rotate_rr(t_list **a, t_list **b);
+void		ra(t_list **a);
+void		rb(t_list **b);
+void		rr(t_list **a, t_list **b);
 
 //push
-void		push_pa(t_list **a, t_list **b);
-void		push_pb(t_list **a, t_list **b);
+void		pa(t_list **a, t_list **b);
+void		pb(t_list **a, t_list **b);
 
 //reverse
-void		reverse_rotate_rra(t_list **a);
-void		reverse_rotate_rrb(t_list **b);
-void		reverse_rotate_rrr(t_list **a, t_list **b);
+void		rra(t_list **a);
+void		rrb(t_list **b);
+void		rrr(t_list **a, t_list **b);
 
 //sort_helper
 t_list		*highest(t_list **stack);

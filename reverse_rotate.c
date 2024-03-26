@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 13:11:23 by stak              #+#    #+#             */
-/*   Updated: 2024/03/11 11:41:43 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/26 11:46:20 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	reverse_rotate_rra(t_list **a)
 	last_a->next = *a;
 	*a = last_a;
 	new_a->next = NULL;
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
-void	reverse_rotate_rrb(t_list **b)
+void	rrb(t_list **b)
 {
 	t_list	*last_b;
 	t_list	*new_b;
@@ -43,10 +43,10 @@ void	reverse_rotate_rrb(t_list **b)
 	last_b->next = *b;
 	*b = last_b;
 	new_b->next = NULL;
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
-void	reverse_rotate_rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b)
 {
 	t_list	*last_a;
 	t_list	*new_a;
@@ -62,7 +62,7 @@ void	reverse_rotate_rrr(t_list **a, t_list **b)
 	last_a->next = *a;
 	*a = last_a;
 	new_a->next = NULL;
-	printf("rra\n");
+	ft_printf("rra\n");
 	last_b = ft_lstlast(*b);
 	new_b = *b;
 	if (*b == NULL || (*b)->next == NULL)
@@ -72,7 +72,7 @@ void	reverse_rotate_rrr(t_list **a, t_list **b)
 	last_b->next = *b;
 	*b = last_b;
 	new_b->next = NULL;
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
 

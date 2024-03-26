@@ -6,65 +6,89 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:58:45 by stak              #+#    #+#             */
-/*   Updated: 2024/03/25 16:59:47 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/26 11:41:15 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// int	main(int argc, char **argv)
+// {
+// 	int		i;
+// 	long	n;
+// 	t_list	*head;
+// 	t_list	*stack_a;
+
+// 	i = 1;
+// 	head = NULL;
+// 	if (1 == argc || (argc == 2 && !argv[1][0]))
+// 		return (1);
+// 	else if (argc == 2)
+// 	{
+// 		argv = ft_split(argv[1], ' ');
+// 		i--;
+// 	}
+// 	while (argv[i])
+// 	{
+// 		n = ft_atoi(argv[i]);
+// 		if (n > INT_MAX || n < INT_MIN)
+// 			printf("");
+// 		if (ft_atoi(argv[i]) != 0 && !ft_dup_check(argv, i))
+// 		{
+// 			stack_a = malloc(sizeof(t_list));
+// 			stack_a->content = ft_atoi(argv[i]);
+// 			stack_a->next = head;
+// 			head = stack_a;
+// 			printf("Inserted: %ld\n", stack_a->content);
+// 		}
+// 		else
+// 		{
+// 			printf("Error");
+// 			return (1);
+// 		}
+// 		i++;
+// 	}
+// 	// Swap nodes
+// 	swap_sa(&head);
+
+// 	// Print the list after swapping
+// 	printf("List content after swapping:\n");
+// 	t_list *current = head;
+// 	while (current != NULL)
+// 	{
+// 		printf("%ld\n", current->content);
+// 		current = current->next;
+// 	}
+// 	// t_list *current = head;
+// 	// while(current != NULL)
+// 	// {
+// 	// 	printf("after%ld\n", current->content);
+// 	// 	current = current->next;
+// 	// }
+// 	return (0);
+// }
+
 int	main(int argc, char **argv)
 {
-	int		i;
-	long	n;
-	t_list	*head;
-	t_list	*stack_a;
+	t_list	*a;
+	t_list	*b;
 
-	i = 1;
-	head = NULL;
-	if (1 == argc || (argc == 2 && !argv[1][0]))
+	a = NULL;
+	b = NULL;
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
+		init_stack_a(&a, argv + 1);
+	if (!stack_sorted(a))
 	{
-		argv = ft_split(argv[1], ' ');
-		i--;
-	}
-	while (argv[i])
-	{
-		n = ft_atoi(argv[i]);
-		if (n > INT_MAX || n < INT_MIN)
-			printf("");
-		if (ft_atoi(argv[i]) != 0 && !ft_dup_check(argv, i))
-		{
-			stack_a = malloc(sizeof(t_list));
-			stack_a->content = ft_atoi(argv[i]);
-			stack_a->next = head;
-			head = stack_a;
-			printf("Inserted: %ld\n", stack_a->content);
-		}
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
 		else
-		{
-			printf("Error");
-			return (1);
-		}
-		i++;
+			sort_stacks(&a, &b);
 	}
-	// Swap nodes
-	swap_sa(&head);
-
-	// Print the list after swapping
-	printf("List content after swapping:\n");
-	t_list *current = head;
-	while (current != NULL)
-	{
-		printf("%ld\n", current->content);
-		current = current->next;
-	}
-	// t_list *current = head;
-	// while(current != NULL)
-	// {
-	// 	printf("after%ld\n", current->content);
-	// 	current = current->next;
-	// }
+	free_stack(&a);
 	return (0);
 }
 // int	main(int argc, char **argv)

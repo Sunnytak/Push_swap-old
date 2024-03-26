@@ -6,13 +6,13 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:08:43 by stak              #+#    #+#             */
-/*   Updated: 2024/03/12 11:19:58 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/26 11:45:53 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_ra(t_list **a)
+void	ra(t_list **a)
 {
 	t_list	*last_a;
 
@@ -24,10 +24,10 @@ void	rotate_ra(t_list **a)
 	last_a->next = *a;
 	*a = (*a)->next;
 	last_a->next->next = NULL;
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
-void	rotate_rb(t_list **b)
+void	rb(t_list **b)
 {
 	t_list	*last_b;
 
@@ -39,10 +39,10 @@ void	rotate_rb(t_list **b)
 	last_b->next = *b;
 	*b = (*b)->next;
 	last_b->next->next = NULL;
-	printf("rb\n");
+	ft_printf("rb\n");
 }
 
-void	rotate_rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
 	t_list	*last_a;
 	t_list	*last_b;
@@ -61,7 +61,7 @@ void	rotate_rr(t_list **a, t_list **b)
 	last_b->next = *b;
 	*b = (*b)->next;
 	last_b->next->next = NULL;
-	printf("rr\n");
+	ft_printf("rr\n");
 }
 
 // int    main(void)

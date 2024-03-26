@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:02:03 by stak              #+#    #+#             */
-/*   Updated: 2024/03/12 11:19:48 by stak             ###   ########.fr       */
+/*   Updated: 2024/03/26 11:48:24 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_pa(t_list **a, t_list **b)
+void	pa(t_list **a, t_list **b)
 {
 	t_list	*first_b;
 
@@ -22,11 +22,11 @@ void	push_pa(t_list **a, t_list **b)
 		*b = (*b)->next;
 		first_b->next = *a;
 		*a = first_b;
-		printf("pa\n");
+		ft_printf("pa\n");
 	}
 }
 
-void	push_pb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b)
 {
 	t_list	*first_a;
 
@@ -36,7 +36,7 @@ void	push_pb(t_list **a, t_list **b)
 		*a = (*a)->next;
 		first_a->next = *b;
 		*b = first_a;
-		printf("pb\n");
+		ft_printf("pb\n");
 	}
 }
 
