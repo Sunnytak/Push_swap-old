@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:53:37 by stak              #+#    #+#             */
-/*   Updated: 2024/02/09 14:27:29 by stak             ###   ########.fr       */
+/*   Updated: 2024/04/04 16:19:01 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,12 @@ static char	**ft_free(char **result, size_t j)
 
 static char	**ft_strwordcount(char const *s, char c, char **string)
 {
-	size_t	i;
-	size_t	start;
-	size_t	j;
+	static int			start = 0;
+	size_t				i;
+	size_t				j;
 
 	i = 0;
 	j = 0;
-	start = 0;
 	while (s[i])
 	{
 		if (s[i] && s[i] != c)

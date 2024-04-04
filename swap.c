@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Swap.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:26:16 by stak              #+#    #+#             */
-/*   Updated: 2024/03/11 11:41:30 by stak             ###   ########.fr       */
+/*   Updated: 2024/04/04 14:39:08 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_sa(t_list **a)
+void	sa(t_list **a)
 {
 	t_list	*first_a;
 	t_list	*second_a;
@@ -25,10 +25,10 @@ void	swap_sa(t_list **a)
 	temp = first_a->content;
 	first_a->content = second_a->content;
 	second_a->content = temp;
-	printf("sa\n");
+	write (1, "sa\n", 3);
 }
 
-void	swap_sb(t_list **b)
+void	sb(t_list **b)
 {
 	t_list	*first_b;
 	t_list	*second_b;
@@ -41,10 +41,10 @@ void	swap_sb(t_list **b)
 	temp = first_b->content;
 	first_b->content = second_b->content;
 	second_b->content = temp;
-	printf("sb\n");
+	write (1, "sb\n", 3);
 }
 
-void	swap_ss(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b)
 {
 	t_list	*second_a;
 	t_list	*second_b;
@@ -61,7 +61,7 @@ void	swap_ss(t_list **a, t_list **b)
 	temp_b = (*b)->content;
 	(*b)->content = second_b->content;
 	second_b->content = temp_b;
-	printf("ss\n");
+	write (1, "ss\n", 3);
 }
 
 // int main(void)

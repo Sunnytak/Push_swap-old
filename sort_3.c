@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 11:13:32 by stak              #+#    #+#             */
-/*   Updated: 2024/04/04 12:29:39 by stak             ###   ########.fr       */
+/*   Created: 2024/04/04 11:57:50 by stak              #+#    #+#             */
+/*   Updated: 2024/04/04 14:38:41 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_3(t_list **a)
 {
-	t_list	*a;
-	t_list	*b;
+	t_list	*max_node;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	else if (argc == 2)
-		init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a);
-		else if (stack_len(a) == 3)
-			sort_3(&a);
-		else
-			sort_stacks(&a, &b);
-	}
-	free_stack(&a);
-	return (0);
+	max_node = highest(a);
+	if ((*a)->lst == max_node->lst)
+		rotate_ra(a);
+	else if ((*a)->next->lst == max_node->lst)
+		reverse_rotate_rra(a);
+	if ((*a)->lst > (*a)->next->lst)
+		swap_sa(a);
 }

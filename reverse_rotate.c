@@ -6,13 +6,13 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 13:11:23 by stak              #+#    #+#             */
-/*   Updated: 2024/03/26 11:46:20 by stak             ###   ########.fr       */
+/*   Updated: 2024/04/04 14:38:32 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_rra(t_list **a)
+void	rra(t_list **a)
 {
 	t_list	*last_a;
 	t_list	*new_a;
@@ -26,7 +26,7 @@ void	reverse_rotate_rra(t_list **a)
 	last_a->next = *a;
 	*a = last_a;
 	new_a->next = NULL;
-	ft_printf("rra\n");
+	write (1, "rra\n", 4);
 }
 
 void	rrb(t_list **b)
@@ -43,7 +43,7 @@ void	rrb(t_list **b)
 	last_b->next = *b;
 	*b = last_b;
 	new_b->next = NULL;
-	ft_printf("rra\n");
+	write (1, "rrb\n", 4);
 }
 
 void	rrr(t_list **a, t_list **b)
@@ -62,7 +62,7 @@ void	rrr(t_list **a, t_list **b)
 	last_a->next = *a;
 	*a = last_a;
 	new_a->next = NULL;
-	ft_printf("rra\n");
+	write (1, "rra\n", 4);
 	last_b = ft_lstlast(*b);
 	new_b = *b;
 	if (*b == NULL || (*b)->next == NULL)
@@ -72,7 +72,7 @@ void	rrr(t_list **a, t_list **b)
 	last_b->next = *b;
 	*b = last_b;
 	new_b->next = NULL;
-	ft_printf("rra\n");
+	write (1, "rra\n", 4);
 }
 
 

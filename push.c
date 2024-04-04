@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:02:03 by stak              #+#    #+#             */
-/*   Updated: 2024/03/26 11:48:24 by stak             ###   ########.fr       */
+/*   Updated: 2024/04/04 14:38:25 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	pa(t_list **a, t_list **b)
 		*b = (*b)->next;
 		first_b->next = *a;
 		*a = first_b;
-		ft_printf("pa\n");
+		write (1, "pa\n", 3);
 	}
 }
 
@@ -36,7 +36,7 @@ void	pb(t_list **a, t_list **b)
 		*a = (*a)->next;
 		first_a->next = *b;
 		*b = first_a;
-		ft_printf("pb\n");
+		write (1, "pb\n", 3);
 	}
 }
 

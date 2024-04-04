@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:08:43 by stak              #+#    #+#             */
-/*   Updated: 2024/03/26 11:45:53 by stak             ###   ########.fr       */
+/*   Updated: 2024/04/04 14:38:36 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ra(t_list **a)
 	last_a->next = *a;
 	*a = (*a)->next;
 	last_a->next->next = NULL;
-	ft_printf("ra\n");
+	write (1, "ra\n", 3);
 }
 
 void	rb(t_list **b)
@@ -39,7 +39,7 @@ void	rb(t_list **b)
 	last_b->next = *b;
 	*b = (*b)->next;
 	last_b->next->next = NULL;
-	ft_printf("rb\n");
+	write (1, "rb\n", 3);
 }
 
 void	rr(t_list **a, t_list **b)
@@ -61,7 +61,7 @@ void	rr(t_list **a, t_list **b)
 	last_b->next = *b;
 	*b = (*b)->next;
 	last_b->next->next = NULL;
-	ft_printf("rr\n");
+	write (1, "rr\n", 3);
 }
 
 // int    main(void)

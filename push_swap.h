@@ -6,7 +6,7 @@
 /*   By: stak <stak@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:03:45 by stak              #+#    #+#             */
-/*   Updated: 2024/03/26 14:29:49 by stak             ###   ########.fr       */
+/*   Updated: 2024/04/04 14:12:18 by stak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "../../New/ft_printf/ft_printf.h"
+# include "../ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
@@ -30,56 +30,68 @@ typedef struct s_list
 	bool			above_median;
 	bool			cheapest;
 }					t_list;
+//split
+static int		ft_countstr(char const *s, char c);
+static char		**ft_strwordcount(char const *s, char c, char **string);
+char			**ft_split(char const *s, char c);
 
-static int	ft_countstr(char const *s, char c);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		*ft_strdup(const char *s1);
-void		*ft_memcpy(void *dst, const void *src, size_t n);
-static int	ft_countstr(char const *s, char c);
-static char	**ft_free(char **result, size_t j);
-static char	**ft_strwordcount(char const *s, char c, char **string);
-char		**ft_split(char const *s, char c);
-size_t		ft_strlen(const char *s);
-int			ft_isdigit(char n);
-int			ft_sign(char n);
-int			ft_checker(char *argv);
-static int	check_overflow(long int i, long int check, long int sign);
-long int	ft_atoi(const char *str);
-int			ft_strncmp(const char *s1, const char *s2, size_t n);
-int			ft_dup_check(char **argv, int i);
+//split_utils
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strdup(const char *s1);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+size_t			ft_strlen(const char *s);
 
-//list
-void		ft_lstadd_back(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
-void		ft_lstadd_front(t_list **lst, t_list *new);
-t_list		*ft_lstlast(t_list *lst);
+//handle_errors
+int				error_syntax(char *str_n);
+int				error_duplicate(t_list *a, int n);
+void			free_stack(t_list **stack);
+void			free_errors(t_list **a);
+
+//list_utils
+void			ft_lstadd_back(t_list **lst, t_list *new);
+int				ft_lstsize(t_list *lst);
+void			ft_lstadd_front(t_list **lst, t_list *new);
+t_list			*ft_lstlast(t_list *lst);
+
+//sort_a_to_b
+void			current_index(t_list *stack);
+static void		cost_analysis_a(t_list *a, t_list *b);
+void			set_cheapest(t_list *stack);
+void			init_nodes_a(t_list *a, t_list *b);
+
+//sort_b_to_a
+static void		set_target_b(t_list *a, t_list *b);
+void			init_nodes_b(t_list *a, t_list *b);
+
+//stack_sort
+static void		append_node(t_list **stack, int n);
+void			init_stack_a(t_list **a, char **argv);
+t_list			*get_cheapest(t_list *stack);
+
+//stack_utils
+int				ft_lstsize(t_list *lst);
+t_list			*find_last(t_list *stack);
+bool			stack_sorted(t_list *stack);
+t_list			*lowest(t_list **stack);
+t_list			*highest(t_list **stack);
 
 //swap
-void		swap_sa(t_list **a);
-void		swap_sb(t_list **b);
-void		swap_ss(t_list **a, t_list **b);
+void			sa(t_list **a);
+void			sb(t_list **b);
+void			ss(t_list **a, t_list **b);
 
 //rotate
-void		ra(t_list **a);
-void		rb(t_list **b);
-void		rr(t_list **a, t_list **b);
+void			ra(t_list **a);
+void			rb(t_list **b);
+void			rr(t_list **a, t_list **b);
 
 //push
-void		pa(t_list **a, t_list **b);
-void		pb(t_list **a, t_list **b);
+void			pa(t_list **a, t_list **b);
+void			pb(t_list **a, t_list **b);
 
 //reverse
-void		rra(t_list **a);
-void		rrb(t_list **b);
-void		rrr(t_list **a, t_list **b);
-
-//sort_helper
-t_list		*highest(t_list **stack);
-t_list		*lowest(t_list **stack);
-t_list		*find_last(t_list *stack);
-
-//sort
-
-void		sort_3(t_list	**stack);
+void			rra(t_list **a);
+void			rrb(t_list **b);
+void			rrr(t_list **a, t_list **b);
 
 #endif
